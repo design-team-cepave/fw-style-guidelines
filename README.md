@@ -1,8 +1,8 @@
-# jj-start
+# NewDefend Style Guidelines
 
 ## Getting Started
 
-### What is jj-start?
+### This project uses the following tools
 
 - [ES6-ready Javascript](http://babeljs.io/) (via Babel)
 - [Browserify](http://browserify.org/) for dependency management
