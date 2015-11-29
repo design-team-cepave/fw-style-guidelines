@@ -5,6 +5,7 @@
     "underscore": "*"
     },
   "devDependencies": {
-    "modernizr": "=2.8.3"
+    "modernizr": "=2.8.3",
+    "bootstrap-sass": "~3.3.4"
   }
 }
