@@ -1,0 +1,57 @@
+extends layouts/_default
+
+block content
+  include modules/_browsehappy
+  .wrapper-container
+    .row
+      // SIDE BAR
+      include modules/_sidebar
+
+      // MAIN CONTENT
+
+      .main-content
+        // PAGE TITLE
+        .row(style="margin-left: -13px;")
+          .page-title
+            h1 Newdefend Guidelines
+        hr
+        // INTRO
+        #intro.content
+          .row
+            include modules/_intro
+        hr
+        // COLOR
+        #color.content
+          .row
+            include modules/_color
+        // TYPOGRAPHY
+        #typography.content
+          .row
+            include modules/_typography
+        hr
+        // BUTTON
+        #buttons.content
+          .row
+            include modules/_button
+        hr
+        // LIST
+        #list.content
+          .row
+            include modules/_list
+        hr
+        // TAB
+        #tab
+          .row
+            include modules/_tab
+        hr
+        // TABLE
+        #table
+          .row
+            include modules/_table
+        hr
+        // FORM
+        #form
+          .row
+            include modules/_form
+
+

@@ -1,0 +1,336 @@
+html
+  body
+    h4 Button Groups
+    // sizes
+    .btn-toolbar(role='toolbar')
+      .btn-group.btn-group-lg
+        button.btn.btn-default(type='button') Left
+        |  
+        button.btn.btn-default(type='button') Middle
+        |  
+        button.btn.btn-default(type='button') Right
+    |     
+    .col-md-12
+      .btn-toolbar(role='toolbar')
+        .btn-group
+          button.btn.btn-default(type='button') Left
+          |  
+          button.btn.btn-default(type='button') Middle
+          |  
+          button.btn.btn-default(type='button') Right
+    |     
+    .col-md-12
+      .btn-toolbar(role='toolbar')
+        .btn-group.btn-group-sm
+          button.btn.btn-default(type='button') Left
+          |  
+          button.btn.btn-default(type='button') Middle
+          |  
+          button.btn.btn-default(type='button') Right
+    |     
+    .col-md-12
+      .btn-toolbar(role='toolbar')
+        .btn-group.btn-group-xs
+          button.btn.btn-default(type='button') Left
+          |  
+          button.btn.btn-default(type='button') Middle
+          |  
+          button.btn.btn-default(type='button') Right
+    // with dropdown
+    h4 With Dropdown
+    |     
+    .col-md-12
+      .btn-group
+        button.btn.btn-default(type='button') 1
+        |  
+        button.btn.btn-default(type='button') 2
+        |             
+        .btn-group
+          button.btn.btn-default.dropdown-toggle(type='button' data-toggle='dropdown') Dropdown
+          |                 
+          ul.dropdown-menu
+            li
+              a(href='#') Dropdown link
+            |                     
+            li
+              a(href='#') Dropdown link
+    // vertical
+    h4 Vertical
+    |     
+    .col-md-12
+      .btn-group-vertical
+        button.btn.btn-default(type='button') Button
+        |  
+        button.btn.btn-default(type='button') Button
+        |             
+        .btn-group
+          button#btnGroupVerticalDrop1.btn.btn-default.dropdown-toggle(type='button' data-toggle='dropdown') Dropdown
+          |                 
+          ul.dropdown-menu(role='menu' aria-labelledby='btnGroupVerticalDrop1')
+            li
+              a(href='#') Dropdown link
+            |                     
+            li
+              a(href='#') Dropdown link
+        button.btn.btn-default(type='button') Button
+    |     
+    .col-md-12
+      // justified
+      h4 Justified
+      |         
+      .btn-group.btn-group-justified
+        .btn-group
+          button.btn.btn-default(type='button') Left
+        |             
+        .btn-group
+          button.btn.btn-default(type='button') Middle
+        |             
+        .btn-group
+          button.btn.btn-default(type='button') Right
+      |         
+      h4 Dropdowns
+      |         
+      .col-md-12
+        // Split button
+        .btn-group
+          button.btn.btn-default.dropdown-toggle(type='button' data-toggle='dropdown') Default
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+        .btn-group
+          button.btn.btn-primary.dropdown-toggle(type='button' data-toggle='dropdown') Primary
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+        .btn-group
+          button.btn.btn-success.dropdown-toggle(type='button' data-toggle='dropdown') Success
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+        .btn-group
+          button.btn.btn-info.dropdown-toggle(type='button' data-toggle='dropdown') Info
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+        .btn-group
+          button.btn.btn-warning.dropdown-toggle(type='button' data-toggle='dropdown') Warning
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+        .btn-group
+          button.btn.btn-danger.dropdown-toggle(type='button' data-toggle='dropdown') Danger
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+      |         
+      .col-md-12
+        // split
+        .btn-group
+          button.btn.btn-default(type='button') Default
+          |                 
+          button.btn.btn-default.dropdown-toggle(type='button' data-toggle='dropdown' aria-expanded='false')
+            span.caret
+            |                 
+            span.sr-only Toggle Dropdown
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+        .btn-group
+          button.btn.btn-primary(type='button') Primary
+          |  
+          button.btn.btn-primary.dropdown-toggle(type='button' data-toggle='dropdown')
+            span.sr-only Toggle Dropdown
+            span.caret
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+        .btn-group
+          button.btn.btn-success(type='button') Success
+          |  
+          button.btn.btn-success.dropdown-toggle(type='button' data-toggle='dropdown')
+            span.caret
+            span.sr-only Toggle Dropdown
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+        .btn-group
+          button.btn.btn-info(type='button') Info
+          |  
+          button.btn.btn-info.dropdown-toggle(type='button' data-toggle='dropdown')
+            span.caret
+            |  
+            span.sr-only Toggle Dropdown
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+        .btn-group
+          button.btn.btn-warning(type='button') Warning
+          |  
+          button.btn.btn-warning.dropdown-toggle(type='button' data-toggle='dropdown')
+            span.caret
+            |  
+            span.sr-only Toggle Dropdown
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+        .btn-group
+          button.btn.btn-danger(type='button') Danger
+          |  
+          button.btn.btn-danger.dropdown-toggle(type='button' data-toggle='dropdown')
+            span.caret
+            span.sr-only Toggle Dropdown
+          |                 
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Action
+            |                     
+            li
+              a(href='#') Another action
+            |                     
+            li
+              a(href='#') Something else here
+            |                     
+            li
+              a(href='#') Separated link
+        // /btn-group
+      |         
+      .col-md-12
+        // Large button group
+        .btn-group
+          button.btn.btn-default.btn-lg.dropdown-toggle(type='button' data-toggle='dropdown') Large button
+          |                 
+          .dropdown-menu(style='margin-left: 2em')
+            | ...
+        // Small button group
+        .btn-group
+          button.btn.btn-default.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown') Small button
+          |                 
+          .dropdown-menu(style='margin-left: 2em')
+            | ...
+        // Extra small button group
+        .btn-group
+          button.btn.btn-default.btn-xs.dropdown-toggle(type='button' data-toggle='dropdown') Extra small button
+          |                 
+          .dropdown-menu(style='margin-left: 2em')
+            | ...

@@ -1,0 +1,45 @@
+// ------------------------------------------------------------
+// :: Color
+// ------------------------------------------------------------
+$pink:rgb(52,207,194);
+$peach: rgb(52,207,194);
+$orange: rgb(52,207,194);
+$light-pink: rgb(52,207,194);
+$plum: rgb(52,207,194);
+$grey: rgb(52,207,194);
+
+$colorAquamarine    : #25D0C3;
+$colorFiord         : #3D4B66;
+$colorLochmara      : #0082D5;
+$colorAtlantis      : #A2D145;
+$colorYellowOrange  : #FFB53A;
+$colorCarnation     : #F84F64;
+$colorAmethyst      : #A93ABA;
+$colorCerulean      : #00A9EA;
+$colorPurpleHeart   : #01DBB0;
+$colorCaribbeanGreen: #A234D5;
+$colorCabaret       : #D74059;
+$colorGrey          : #3B4354;
+
+
+$colorPrimaryA      : $colorAquamarine;
+$colorPrimaryB      : $colorFiord;
+
+$GradientAStart     : $colorCerulean;
+$GradientAEnd       : $colorPurpleHeart;
+$GradientBStart     : $colorCaribbeanGreen;
+$GradientBend       : $colorCabaret;
+
+$colorSecondaryB    : $colorLochmara;
+$colorSecondaryG    : $colorAtlantis;
+$colorSecondaryY    : $colorYellowOrange;
+$colorSecondaryR    : $colorCarnation;
+$colorSecondaryP    : $colorAmethyst;
+
+$colorGrayLightest  : lighten($colorGrey, 70%);
+$colorGrayLighter   : lighten($colorGrey, 60%);
+$colorGrayLight     : lighten($colorGrey, 48%);
+$colorGray          : lighten($colorGrey, 36%);
+$colorGrayDark      : lighten($colorGrey, 24%);
+$colorGrayDarker    : lighten($colorGrey, 12%);
+$colorGrayDarkest   : $colorGrey;

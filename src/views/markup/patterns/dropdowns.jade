@@ -1,0 +1,43 @@
+html
+  body
+    .dropdown
+      button#dropdownMenu1.btn.dropdown-toggle.sr-only(type='button' data-toggle='dropdown')
+        | Dropdown
+        span.caret
+      |   
+      ul.dropdown-menu(role='menu' aria-labelledby='dropdownMenu2')
+        li.dropdown-header(role='presentation') Dropdown header
+        |           
+        li(role='presentation')
+          a(role='menuitem' tabindex='-1' href='#') Action
+        |           
+        li.disabled(role='presentation')
+          a(role='menuitem' tabindex='-1' href='#') Disabled action
+        |           
+        li(role='presentation')
+          a(role='menuitem' tabindex='-1' href='#') Something else here
+        |           
+        li.divider(role='presentation')
+        |           
+        li.dropdown-header(role='presentation') Dropdown header
+        |           
+        li(role='presentation')
+          a(role='menuitem' tabindex='-1' href='#') Separated link
+    .dropdown
+      // Link or button to toggle dropdown
+      ul.dropdown-menu(role='menu' aria-labelledby='dropdownMenu' style='display: block; position: static;')
+        li.dropdown-header Dropdown header
+        |                 
+        li.disabled
+          a(tabindex='-1' href='#') Action
+        |                 
+        li
+          a(tabindex='-1' href='#') Another action
+        |                 
+        li
+          a(tabindex='-1' href='#') Something else here
+        |                 
+        li.divider
+        |                 
+        li
+          a(tabindex='-1' href='#') Separated link

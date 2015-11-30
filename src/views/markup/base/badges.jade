@@ -1,0 +1,37 @@
+html
+  body
+    ul.nav.nav-pills
+      li.active
+        a(href='#')
+          | Home 
+          span.badge 42
+      |      
+      li
+        a(href='#') Profile
+      |      
+      li
+        a(href='#')
+          | Messages 
+          span.badge 3
+    |    
+    br
+    |    
+    ul.nav.nav-pills.nav-stacked(style='max-width: 260px;')
+      li.active
+        a(href='#')
+          span.badge.pull-right 42
+          |          Home
+      |      
+      li
+        a(href='#') Profile
+      |      
+      li
+        a(href='#')
+          span.badge.pull-right 3
+          |          Messages
+    |    
+    br
+    |    
+    button.btn.btn-primary(type='button')
+      | Messages 
+      span.badge 4

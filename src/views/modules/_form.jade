@@ -1,0 +1,47 @@
+.material.form
+  h2 Form 表单
+  .row
+    .col-xs-6
+      .light-bg
+        form
+          .row
+            .col-xs-6
+              label
+                | 文本域
+                input(type="text")
+            .col-xs-6
+              label
+                | 文本域
+                input(type="text")
+          .row
+            .col-xs-12
+              label
+                | 文本域
+                input(type="text")
+          .row
+            .col-xs-12
+              label
+                | 选择列表
+                select
+                  option(value="value1")  值1
+                  option(value="value2")  值2
+                  option(value="value3")  值3
+                  option(value="value4")  值4
+          .row
+            .col-xs-6
+              label 单选按钮
+              input#pokemonRed(name="pokemon" type="radio" value="Red")
+              label(for="pokemonOne")  选项一
+              input#pokemonBlue(name="pokemon" type="radio" value="Blue")
+              label(for="pokemonTwo")  选项二
+            .col-xs-6
+              label 复选框
+              input#checkbox1(type="checkbox")
+              label(for="checkbox1")  选项一
+              input#checkbox2(type="checkbox")
+              label(for="checkbox2")  选项-二
+          .row
+            .col-xs-12
+              label
+                | 多行的文本输入
+                textarea

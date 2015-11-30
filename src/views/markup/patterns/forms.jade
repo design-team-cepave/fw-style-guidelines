@@ -1,0 +1,83 @@
+html
+  body
+    form
+      fieldset
+        legend Legend
+        |            
+        .form-group
+          label(for='exampleInputEmail') Email address
+          |              
+          input#exampleInputEmail.form-control(type='text' placeholder='Enter email')
+        |            
+        .form-group
+          label(for='exampleInputPassword') Password
+          |              
+          input#exampleInputPassword.form-control(type='password' placeholder='Password')
+        |            
+        .form-group
+          label(for='exampleInputFile') File input
+          |              
+          input#exampleInputFile.form-control(type='file')
+          |              
+          p.help-block Example block-level help text here.
+        |            
+        .checkbox
+          label
+            input(type='checkbox')
+            | Check me out
+        |            
+        button.btn.btn-default(type='submit') Submit
+    |        
+    hr
+    |        
+    form.form-inline
+      input.form-control(type='text' placeholder='Email' style='width: 200px;')
+      |          
+      input.form-control(type='password' placeholder='Password' style='width: 200px;')
+      |          
+      .checkbox
+        label
+          input(type='checkbox')
+          | Remember me
+      |          
+      button.btn.btn-default(type='submit') Sign in
+    |        
+    hr
+    |        
+    form.form-horizontal
+      .form-group
+        label.col-lg-2.control-label(for='inputEmail') Email
+        |            
+        .col-lg-10
+          input#inputEmail.form-control(type='text' placeholder='Email')
+      |          
+      .form-group.has-warning
+        label.col-lg-2.control-label(for='inputEmail') Email
+        |            
+        .col-lg-10
+          input#inputEmail.form-control(type='text' placeholder='Email')
+      |          
+      .form-group.has-error
+        label.col-lg-2.control-label(for='inputEmail') Email
+        |            
+        .col-lg-10
+          input#inputEmail.form-control(type='text' placeholder='Email')
+      |          
+      .form-group.has-success
+        label.col-lg-2.control-label(for='inputEmail') Email
+        |            
+        .col-lg-10
+          input#inputEmail.form-control(type='text' placeholder='Email')
+      |          
+      .form-group
+        label.col-lg-2.control-label(for='inputPassword') Password
+        |            
+        .col-lg-10
+          input#inputPassword.form-control(type='password' placeholder='Password')
+          |              
+          .checkbox
+            label
+              input(type='checkbox')
+              | Remember me
+          |              
+          button.btn.btn-default(type='submit') Sign in
