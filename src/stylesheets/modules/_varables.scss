@@ -1,3 +1,14 @@
+$alpha     : 42px;
+$beta      : 32px;
+$gamma     : 28px;
+$delta     : 26px;
+$epsilon   : 24px;
+$zeta      : 20px;
+$eta       : 18px;
+$theta     : 15px;
+$iota      : 14px;
+$kappa     : 12px;
+
 // ------------------------------------------------------------
 // :: Color
 // ------------------------------------------------------------
@@ -43,3 +54,17 @@ $colorGray          : lighten($colorGrey, 36%);
 $colorGrayDark      : lighten($colorGrey, 24%);
 $colorGrayDarker    : lighten($colorGrey, 12%);
 $colorGrayDarkest   : $colorGrey;
+
+$baseFontFamily: 'Microsoft Yahei','Hiragino Sans GB','WenQuanYi Micro Hei', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+// Type
+$baseFontSize   : 14;
+$baseLineHeight : 1.5;
+$smallFontSize  : $baseFontSize;
+
+$baseLine     : $baseFontSize * $baseLineHeight;
+$px: 'px';
+
+$tfootBackgroundColor: $colorGrayLightest;
+$colorStripedTable: $colorGrayLighter;
+$colorHoveredTable: lightne($colorPrimaryA,50%);
+$cellBorder: 1px;

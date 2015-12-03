@@ -2,7 +2,7 @@ extends layouts/_default
 
 block content
   include modules/_browsehappy
-  .wrapper-container
+  .wrapper-container.style-guidelins
     .row
       // SIDE BAR
       include modules/_sidebar
@@ -14,7 +14,7 @@ block content
         .row(style="margin-left: -13px;")
           .page-title
             h1 Newdefend Guidelines
-        hr
+
         // INTRO
         #intro.content
           .row
@@ -33,11 +33,6 @@ block content
         #buttons.content
           .row
             include modules/_button
-        hr
-        // LIST
-        #list.content
-          .row
-            include modules/_list
         hr
         // TAB
         #tab

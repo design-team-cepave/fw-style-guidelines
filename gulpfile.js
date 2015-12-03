@@ -23,7 +23,8 @@ gulp.task('compass', function() {
     .pipe($.plumber())
     .pipe($.compass({
       css: 'dist/stylesheets',
-      sass: 'src/stylesheets'
+      sass: 'src/stylesheets',
+      require: ['susy', 'modular-scale']
     }))
     .pipe(gulp.dest('dist/stylesheets'));
 });

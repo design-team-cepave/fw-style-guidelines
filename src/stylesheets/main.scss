@@ -1,30 +1,27 @@
-/* ========================================================================
 
-[Table of Content]
-
-1. Scaffolding
-  1.1 bootstrap (framework)
-  1.2 bootstrap-variables (override)
-  1.3 bootstrap-reset (override)
-  1.4 font
-
- ========================================================================== */
-
+// Import Compass
 @import 'compass';
+@import "compass/reset";
 
-// Bootstrap
-@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// Bootstrap reset
-// @import "modules/bootstrap-variables";
-// @import "modules/bootstrap-reset";
-// Font
-// @import "modules/font";
+// Import Susy
+@import "susy";
+$susy: (
+  columns: 12,
+  gutters: 0,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+  global-box-sizing: border-box
+);
+
+@include border-box-sizing;
 
 // Varables
 @import "modules/varables";
 
 // Mixin
 @import "modules/mixin";
+
 
 //
 //----------------
@@ -33,123 +30,379 @@ body {
   height: 100%;
   overflow: hidden;
 }
-
+@mixin base-font {
+  font-size: ceil($baseFontSize * 1) * 1px;
+  line-height: $baseLineHeight;
+}
 body {
-  font-family: 'Microsoft Yahei','Hiragino Sans GB','WenQuanYi Micro Hei', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-family: $baseFontFamily;
   color: $colorGrayDarker;
-  font-size: 14px;
+  @include base-font;
 }
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
+@mixin link {
+  font-size: ceil($baseFontSize * 1.1428) * 1px;
+  font-style: italic;
+  text-decoration: underline;
+}
 a {
-  color: $colorGrayDarkest;
+  @include link;
 }
-
 h1 {
+  font-size: ceil($baseFontSize * 3.428) * 1px;
+  line-height: 1.1333;
+  margin-bottom: .2666em;
   font-weight: 700;
 }
-
 h2 {
+  font-size: ceil($baseFontSize * 2.571) * 1px;
+  line-height: 1.1666;
+  margin-bottom: .4555em;
   font-weight: 300;
 }
-
 h3 {
+  font-size: ceil($baseFontSize * 2.285) * 1px;
+  line-height: 1.2666;
+  margin-bottom: .4em;
   font-weight: 600;
 }
-
+h4 {
+  font-size: ceil($baseFontSize * 1.642) * 1px;
+  line-height: 1.3666;
+  margin-bottom: .4555em;
+}
+h5 {
+  font-size: ceil($baseFontSize * 1.428) * 1px;
+  line-height: 1.4666;
+  margin-bottom: .5em;
+}
 h6 {
+  font-size: ceil($baseFontSize * 1.142) * 1px;
+  line-height: 1.5;
+  margin-bottom: .4555em;
+  text-transform: uppercase;
   font-weight: 400;
 }
-
-.wrapper-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: auto;
-  @include container-fixed;
+thead th,
+thead td,
+tfoot th,
+tfoot td {
+  background-color: $tfootBackgroundColor;
 }
-
-.sidebar {
-  padding-left: 0;
-  padding-right: 0;
-  background-color: #f9f9f9;
-  position: fixed;
-  height: 100%;
-  overflow-y: auto;
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: $colorPrimaryA;
-  }
+th, td {
+  border-bottom: $cellBorder;
+  padding: 0.5em 0.8em;
 }
-.logo {
-  img {
-    width: 60%;
-    margin: 20%;
-    border-radius: 100%;
-  }
-  border-bottom: 1px solid white;
+table caption {
+  text-transform: uppercase;
+  padding: 0 1em;
+  color: $colorGrayLight;
+  font-size: $smallFontSize;
 }
-@mixin categories-item {
-
-}
-.categories {
-  margin-left: 0;
-  @include reset-list-style;
-  @include reset-box-model;
-}
-%selected {
-  background-color: white;
-  font-weight: 600;
-  border-left: 4px solid $peach;
-}
-.categor__item {
-  a {
-    display: block;
-    padding: 15px 40px;
-    margin: 0;
-    font-weight: 400;
-    font-size: 16px;
-    border-bottom: 1px solid white;
-    list-style-type: none;
-    color: $colorGrayDarker;
-    transition: all ease .4s;
-    border-left: 0px solid $peach;
-    cursor: pointer;
-    &:hover, &:active, &:focus {
-      @extend %selected;
+table {
+  &.table-bordered {
+    td, th {
+      border: 1px solid $colorStripedTable;
     }
   }
-}
-.main-content {
-  @include make-xs-column(8);
-  @include make-xs-column-offset(4);
-  @include make-md-column(10);
-  @include make-md-column-offset(2);
-}
-.content {
-  padding-top: 100px;
-}
-.page-title {
-  position: fixed;
-  z-index: 20;
-  background-color: white;
-  padding: 15px 60px;
-  width: 100%;
-  top:0;
-  @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
-  h1 {
-    font-size: 24px;
+  &.table-stroked {
+    border-top: 1px solid $colorStripedTable;
+    border-left: 1px solid $colorStripedTable;
+    td, th {
+      border-bottom: 1px solid $colorStripedTable;
+      border-right: 1px solid $colorStripedTable;
+    }
   }
+  &.table-striped {
+    tbody tr:nth-child(even) td {
+      background-color: lighten($colorStripedTable, 100);
+    }
+    tbody tr:nth-child(odd) td {
+      background-color: $colorStripedTable;
+    }
+  }
+  &.table-hovered tbody tr:hover td,
+  &.table-hovered thead tr:hover th {
+    background-color: $colorHoveredTable;
+  }
+}
+
+// help
+%lowercase, .lowercase {
+  text-transform: lowercase;
+}
+%pd-t-b-theta, .pd-t-b-theta {
+  padding: $theta 0;
+}
+%pd-t-b-zeta, .pd-t-b-zeta {
+  padding: $zeta 0;
+}
+%pd-t-b-epsilon, .pd-t-b-epsilon {
+  padding: $epsilon 0;
+}
+
+// color
+.aquamarine { background-color: $colorAquamarine;}
+.fiord { background-color: $colorFiord;}
+.lochmara { background-color: $colorLochmara;}
+.atlantis { background-color: $colorAtlantis;}
+.yellow-orange { background-color: $colorYellowOrange;}
+.carnation { background-color: $colorCarnation;}
+.amethyst { background-color: $colorAmethyst;}
+
+.pink { background-color: $pink;}
+.peach { background-color: $peach;}
+.orange { background-color: $orange;}
+.plum { background-color: $plum;}
+.grey { background-color: $grey;}
+.light-pink { background-color: $light-pink;}
+
+.gradient-primary { @include gradient-primary;}
+.gradient-secondary { @include gradient-secondary;}
+
+.graylightest { background-color: $colorGrayLightest;}
+.graylighter { background-color: $colorGrayLighter;}
+.graylight { background-color: $colorGrayLight;}
+.gray { background-color: $colorGray;}
+.graydark { background-color: $colorGrayDark;}
+.graydarker { background-color: $colorGrayDarker;}
+.graydarkest { background-color: $colorGrayDarkest;}
+
+// button
+.button {
+  // reset a teg
+  font-style: normal;
+  text-decoration: none;
+  display: inline-block;
+  color: $colorPrimaryA;
+  text-align: center;
+  padding: .825rem 2.5rem .825rem 2.5rem;
+  @include border-radius(3px);
+  @include transition(all ease .4s);
+  &:hover {
+    background-color: transparent;
+    @include box-shadow(0 .25em .5em rgba($colorGrayDarkest,.5))
+  }
+}
+.pill {
+  border-radius: 25px;
+}
+@mixin button-stoke {
+  color: $colorPrimaryA;
+  border-color: $colorPrimaryA;
+  border-width: 2px;
+  border-style: solid;
+  background: transparent;
+}
+@mixin button-fill {
+  @include button-stoke;
+  color: $colorGrayLightest;
+  background-color: $colorPrimaryA;
+}
+.stroke {
+  @include button-stoke;
+}
+.fill {
+  @include button-fill;
+  &:hover {
+    @extend .stroke;
+  }
+}
+.gradient {
+  &.fill {
+    @include button-fill;
+    @include border-gradient($GradientAStart, $GradientAEnd, 1px);
+    @include gradient-primary;
+    &:hover {
+      @include button-fill;
+    }
+  }
+  &.stroke {
+    @include button-stoke;
+    @include box-gradient($GradientAStart, $GradientAEnd, 1px);
+    border-width: 0;
+  }
+}
+
+.style-guidelins {
+  hr {
+    border: 0;
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-top-color: $colorGrayLighter;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  code {
+    font-size: ($baseFontSize * .8) * 1px;
+    color: darken($colorSecondaryR, 20%);
+    @include border-radius(2px);
+    @include box-shadow(0 0 5px $colorGrayLighter inset);
+    background-color: $colorGrayLightest;
+    padding: .15em .5em;
+    &.class {
+      @extend %lowercase;
+    }
+    &.code {
+
+    }
+  }
+  .row {
+    @include container;
+  }
+  &.wrapper-container {
+    @include container;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+  }
+  .sidebar {
+    @include span(3 of 12);
+    background-color: #f9f9f9;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $colorPrimaryA;
+    }
+  }
+  .categories {
+    @include reset-list-style;
+    @include reset-box-model;
+  }
+  %selected {
+    background-color: white;
+    font-weight: 600;
+    border-left: 4px solid $peach;
+  }
+  .categor__item {
+    a {
+      display: block;
+      padding: 15px 40px;
+      font-weight: 400;
+      border-bottom: 1px solid white;
+      color: $colorGrayDarker;
+      border-left: 0px solid $peach;
+      font-style: normal;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all ease .4s;
+      &:hover, &:active, &:focus {
+        @extend %selected;
+      }
+    }
+  }
+  .main-content {
+    @include span(9 of 12 last);
+    padding-top: 100px;
+  }
+  .page-title {
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    padding: 15px 60px;
+    width: 100%;
+    top:0;
+    left: 25%;
+    @include box-shadow(0 1px 1px rgba($colorGray, 0.25));
+    h1 {
+      font-size: 24px;
+    }
+  }
+  .logo {
+    img {
+      width: 50%;
+      margin: 10% 25%;
+      border-radius: 100%;
+    }
+    border-bottom: 1px solid white;
+  }
+
+  //COLOR
+  .color {
+    .row + h3 {
+      margin-top: $zeta;
+    }
+    .color-block {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 5px 0;
+      float: left;
+    }
+    .row {
+      @extend .pd-t-b-zeta;
+    }
+    .color-primary {
+      .color-item {
+        @include span(1 of 4);
+      }
+    }
+    .color-secondary {
+      .color-item {
+        @include span(1 of 5);
+      }
+    }
+    .color-gray {
+      .color-item {
+        @include span(1 of 7);
+      }
+    }
+  }
+
+  //TYPOGRAPHY
+  .typography {
+    .row {
+      @extend %pd-t-b-theta;
+    }
+    .h1 {
+      @extend h1;
+    }
+    .h2 {
+      @extend h2;
+    }
+    .h3 {
+      @extend h3;
+    }
+    .p {
+      @include span(1 of 2);
+      @include base-font;
+    }
+    .a {
+      @include link;
+    }
+  }
+
+  //BUTTON
+  .button {
+    &-item {
+      @include span(1 of 4);
+    }
+    & + .button {
+      margin-top: 1em;
+    }
+  }
+
+
+
+
+}
+
+
+
+.content {
+
+}
+.separator {
+  padding: 0 .5em 0 .5em;
+}
+.material {
+  @extend %pd-t-b-epsilon;
 }
 
 .material {
@@ -172,127 +425,21 @@ h6 {
     font-size: 14px;
     color: #959595;
   }
-  hr {
-    margin: 90px 0;
-    border: solid #f5f5f5;
-    border-width: 1px 0 0;
-  }
+
 }
 
 .break {
-  display: none
+  display: none;
 }
 
-//COLOR
-.color {
-  .color-block {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin: 5px 0;
-    float: left;
-  }
-}
-
-.aquamarine { background-color: $colorAquamarine;}
-.fiord { background-color: $colorFiord;}
-.lochmara { background-color: $colorLochmara;}
-.atlantis { background-color: $colorAtlantis;}
-.yellow-orange { background-color: $colorYellowOrange;}
-.carnation { background-color: $colorCarnation;}
-.amethyst { background-color: $colorAmethyst;}
-
-.pink { background-color: $pink;}
-.peach { background-color: $peach;}
-.orange { background-color: $orange;}
-.plum { background-color: $plum;}
-.grey { background-color: $grey;}
-.light-pink { background-color: $light-pink;}
 
 
-.gradient-primary { @include gradient-primary;}
-.gradient-secondary { @include gradient-secondary;}
 
-.graylightest { background-color: $colorGrayLightest;}
-.graylighter { background-color: $colorGrayLighter;}
-.graylight { background-color: $colorGrayLight;}
-.gray { background-color: $colorGray;}
-.graydark { background-color: $colorGrayDark;}
-.graydarker { background-color: $colorGrayDarker;}
-.graydarkest { background-color: $colorGrayDarkest;}
 
-//TYPOGRAPHY
-.typography {
-  .h1 {
-    font-size: 80px;
-    font-weight: 700;
-    line-height: 1;
-  }
-  .h2 {
-    font-size: 60px;
-    font-weight: 300;
-    line-height: 1;
-  }
-  .h3 {
-    font-size: 36px;
-    font-weight: 600;
-    line-height: 1;
-  }
-  .p {
-    width: 50%;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
-  }
-  .a {
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    text-decoration: underline;
-    line-height: 1.5;
-  }
 
-}
 
-//BUTTON
 
-.buttons {
-}
-.button {
-  color: $colorPrimaryA;
-  text-align: center;
-  padding: .825rem 2.5rem .825rem 2.5rem;
-  @include border-radius(3px);
-  @include transition(all ease .4s);
-  &:hover {
-    background-color: transparent;
-    @include box-shadow(0 .25em .5em rgba($colorGrayDarkest,.5))
-  }
-}
-.pill {
-  border-radius: 25px;
-}
-.fill {
-  color: $colorGrayLightest;
-  @extend .aquamarine;
-}
-.stroke {
-  background: transparent;
-  border-color: $colorPrimaryA;
-  border-width: 2px;
-}
-.gradient {
-  &.fill {
-    color: $colorGrayLightest;
-    @include border-gradient($GradientAStart, $GradientAEnd, 1px);
-    @include gradient-primary;
-  }
-  &.stroke {
-    color: $colorPrimaryA;
-    @include box-gradient($GradientAStart, $GradientAEnd, 1px);
-    border-width: 0;
-  }
-}
+
 
 //LIST
 .styled-list {
@@ -382,43 +529,43 @@ h6 {
 }
 
 //TABLE
-table {
-  border: none;
-  border-spacing: 0;
-  tr:first-child {
-    th:first-child {
-      border-radius: 3px 0 0 0;
-    }
-    th:last-child {
-      border-radius: 0 3px 0 0;
-    }
-  }
-  tr:last-child {
-    td:first-child {
-      border-radius: 0 0 0 3px;
-    }
-    td:last-child {
-      border-radius: 0 0 3px 0;
-    }
-  }
-  tr {
-    td, th {
-      padding-left: 1em;
-    }
-    th {
-      border-right: 1px solid rgba(255, 255, 255, 1);
-      // width: 150px;
-      font-weight: 600;
-    }
-    td {
-      border-right: 1px solid rgba(240, 240, 240, 1);
-    }
-    th:last-child,
-    td:last-child {
-      border-right: none;
-    }
-  }
-}
+// table {
+//   border: none;
+//   border-spacing: 0;
+//   tr:first-child {
+//     th:first-child {
+//       border-radius: 3px 0 0 0;
+//     }
+//     th:last-child {
+//       border-radius: 0 3px 0 0;
+//     }
+//   }
+//   tr:last-child {
+//     td:first-child {
+//       border-radius: 0 0 0 3px;
+//     }
+//     td:last-child {
+//       border-radius: 0 0 3px 0;
+//     }
+//   }
+//   tr {
+//     td, th {
+//       padding-left: 1em;
+//     }
+//     th {
+//       border-right: 1px solid rgba(255, 255, 255, 1);
+//       // width: 150px;
+//       font-weight: 600;
+//     }
+//     td {
+//       border-right: 1px solid rgba(240, 240, 240, 1);
+//     }
+//     th:last-child,
+//     td:last-child {
+//       border-right: none;
+//     }
+//   }
+// }
 
 .table {
   .row {
