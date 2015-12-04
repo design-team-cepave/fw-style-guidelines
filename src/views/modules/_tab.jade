@@ -1,22 +1,12 @@
 .material.tab
   h2 Tab
   .row
-    .col-xs-6
+    .tab-item
       ul.tabs(data-tab="")
-        li.tab-title.active
-          a(href="#panel1")  Tab 1
-        li.tab-title
-          a(href="#panel2")  Tab 2
-        li.tab-title
-          a(href="#panel3")  Tab 3
-        li.tab-title
-          a(href="#panel4")  Tab 4
+        - for (var x = 1; x <= 4; x++)
+          li.tab-title
+            a(href="javascript:;")  Tab #{x}
       .tabs-content
-        #panel1.content.active
-          p =zh_lorem_paragraph
-        #panel2.content
-          p =zh_lorem_paragraph
-        #panel3.content
-          p =zh_lorem_paragraph
-        #panel4.content
-          p =zh_lorem_paragraph
+        - for (var x = 1; x <= 4; x++)
+          .tabs-item
+            | #{x}

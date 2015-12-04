@@ -105,11 +105,21 @@ table {
     }
   }
   &.table-stroked {
-    border-top: 1px solid $colorStripedTable;
-    border-left: 1px solid $colorStripedTable;
-    td, th {
+    th, td {
       border-bottom: 1px solid $colorStripedTable;
       border-right: 1px solid $colorStripedTable;
+    }
+    th, td {
+      &:last-child {
+        border-right: none;
+      }
+    }
+    tr {
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
     }
   }
   &.table-striped {
@@ -388,7 +398,12 @@ table {
     }
   }
 
-
+  //TABLE
+  .table {
+    &-item {
+      @include span(1 of 4);
+    }
+  }
 
 
 }
@@ -489,45 +504,46 @@ table {
 }
 
 .tabs {
+  @include reset-box-model;
+  @include reset-list-style;
+  text-align: center;
+  font-size: 0;
+  background-color: white;
   .tab-title {
-    width: 25%;
+    display: inline-block;
     a {
+      display: block;
       outline: none;
-      text-transform: uppercase;
+      text-decoration: none;
+      font-style: normal;
       text-align: center;
-      color: $grey;
-      font-weight: 600;
-      background: #f6f6f6;
-      border-top: 2px solid #f6f6f6;
-      border-bottom: 1px solid #f1f1f1;
-      border-right: 1px solid white;
       transition: all ease .4;
+      padding: 10px 50px;
+      color: $colorPrimaryA;
       &:hover {
-        background: #f9f9f9;
-        border-bottom: 1px solid #f9f9f9;
-        border-top: 2px solid #f9f9f9;
+        background: $colorGrayLighter;
       }
     }
   }
-  .active {
+  .current {
     a, a:hover {
-      background-color: #f9f9f9 !important;
-      border-top: 2px solid $pink;
-      border-bottom: 1px solid #f9f9f9;
-      border-right: 1px solid #f1f1f1;
-      border-left: 1px solid #f1f1f1;
+      color: $colorGrayLightest;
+      background-color: $colorPrimaryA;
+      @include box-shadow(inset 0px -2px 0px 0px rgba(0,0,0,0.08), inset 0px 2px 0px 0px rgba(0,0,0,0.08))
     }
   }
 }
 
 .tabs-content {
-  background: #f9f9f9;
   padding: 20px;
-  border-left: 1px solid #f1f1f1;
-  border-right: 1px solid #f1f1f1;
-  border-bottom: 1px solid #f1f1f1;
+  border-top: 1px solid $colorGrayLighter;
 }
-
+.tabs-item {
+  display: none;
+  &:first-child {
+    display: block;
+  }
+}
 //TABLE
 // table {
 //   border: none;
@@ -571,27 +587,7 @@ table {
   .row {
     margin: 0px;
   }
-  .bg-white {
-    background-color: rgba(250, 250, 250, .5);
-    padding-top: 20px;
-  }
-  .bg-dark {
-    background-color: $grey;
-    padding: 10px;
-  }
-  .pink {
-    tr:first-child {
-      background: $light-pink;
-    }
-  }
-  .peach {
-    tr:first-child {
-      background: $peach;
-      th {
-        color: white;
-      }
-    }
-  }
+
 }
 
 //FORM

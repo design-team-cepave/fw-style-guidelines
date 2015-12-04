@@ -1,47 +1,28 @@
+mixin table-content
+  thead
+    tr
+      th 编号
+      th 目录
+      th 详细
+  tbody
+  - for (var x = 1; x <= 4; x++)
+    tr
+      td #{x}
+      td
+      td
+
 .material.table
   h2 Table
   .row
-    .col-xs-6
-      table
-        tr
-          th 编号
-          th 目录
-          th 详细
-        tr
-          td 1
-          td
-          td
-        tr
-          td 2
-          td
-          td
-        tr
-          td 3
-          td
-          td
-        tr
-          td 4
-          td
-          td
-    .col-xs-6
-      table
-        tr
-          th 编号
-          th 目录
-          th 详细
-        tr
-          td 1
-          td
-          td
-        tr
-          td 2
-          td
-          td
-        tr
-          td 3
-          td
-          td
-        tr
-          td 4
-          td
-          td
+    .table-item
+      table.table-bordered
+        +table-content
+    .table-item
+      table.table-stroked
+        +table-content
+    .table-item
+      table.table-striped
+        +table-content
+    .table-item
+      table.table-hovered
+        +table-content
