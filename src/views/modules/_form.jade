@@ -1,47 +1,86 @@
 .material.form
   h2 Form 表单
   .row
-    .col-xs-6
-      .light-bg
-        form
-          .row
-            .col-xs-6
-              label
-                | 文本域
-                input(type="text")
-            .col-xs-6
-              label
-                | 文本域
-                input(type="text")
-          .row
-            .col-xs-12
-              label
-                | 文本域
-                input(type="text")
-          .row
-            .col-xs-12
-              label
-                | 选择列表
-                select
-                  option(value="value1")  值1
-                  option(value="value2")  值2
-                  option(value="value3")  值3
-                  option(value="value4")  值4
-          .row
-            .col-xs-6
-              label 单选按钮
-              input#pokemonRed(name="pokemon" type="radio" value="Red")
-              label(for="pokemonOne")  选项一
-              input#pokemonBlue(name="pokemon" type="radio" value="Blue")
-              label(for="pokemonTwo")  选项二
-            .col-xs-6
-              label 复选框
-              input#checkbox1(type="checkbox")
-              label(for="checkbox1")  选项一
-              input#checkbox2(type="checkbox")
-              label(for="checkbox2")  选项-二
-          .row
-            .col-xs-12
-              label
-                | 多行的文本输入
-                textarea
+    .form-item
+      h3 Label 標籤
+      form.forms(method='post', action='javascript:;')
+        label
+          | Email
+          input.width-75(type='email', name='user-email')
+        label
+          | Password
+          input.width-75(type='password', name='user-password')
+        p
+          button.button.stroke Cancel
+          button.button.fill Log in
+    .form-item
+      h3 placeholder
+      form.forms(method='post', action='javascript:;')
+        label
+          input.width-75(type='email', name='user-email', placeholder='Email')
+        label
+          input.width-75(type='password', name='user-password', placeholder='Password')
+        p
+          button.button.pill.fill.gradient Log in
+    .form-item
+      h3 文本框狀態
+      form.forms(method='post', action='')
+        label
+          input.width-75(type='text', name='state-gray', placeholder='文本框')
+        label
+          input.input-error.width-75(type='text', name='state-error', placeholder='文本框-錯誤狀態')
+          span.error 錯誤狀態訊息
+        label
+          input.input-success.width-75(type='text', name='state-success', placeholder='文本框-成功狀態')
+          span.success 成功狀態訊息
+        label
+          input.input-warning.width-75(type='text', name='state-warning', placeholder='文本框-警告狀態')
+          span.warning 警告狀態訊息
+    //- .form-item
+    //-   form.forms(method='post', action='')
+    //-     label
+    //-       | Email
+    //-       span.req *
+    //-       input.width-50(type='email', name='user-email')
+      //- form
+      //-   .row
+      //-     .col-xs-6
+      //-       label
+      //-         | 文本域
+      //-         input(type="text")
+      //-     .col-xs-6
+      //-       label
+      //-         | 文本域
+      //-         input(type="text")
+      //-   .row
+      //-     .col-xs-12
+      //-       label
+      //-         | 文本域
+      //-         input(type="text")
+      //-   .row
+      //-     .col-xs-12
+      //-       label
+      //-         | 选择列表
+      //-         select
+      //-           option(value="value1")  值1
+      //-           option(value="value2")  值2
+      //-           option(value="value3")  值3
+      //-           option(value="value4")  值4
+      //-   .row
+      //-     .col-xs-6
+      //-       label 单选按钮
+      //-       input#pokemonRed(name="pokemon" type="radio" value="Red")
+      //-       label(for="pokemonOne")  选项一
+      //-       input#pokemonBlue(name="pokemon" type="radio" value="Blue")
+      //-       label(for="pokemonTwo")  选项二
+      //-     .col-xs-6
+      //-       label 复选框
+      //-       input#checkbox1(type="checkbox")
+      //-       label(for="checkbox1")  选项一
+      //-       input#checkbox2(type="checkbox")
+      //-       label(for="checkbox2")  选项-二
+      //-   .row
+      //-     .col-xs-12
+      //-       label
+      //-         | 多行的文本输入
+      //-         textarea

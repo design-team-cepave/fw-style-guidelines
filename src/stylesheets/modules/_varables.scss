@@ -59,7 +59,7 @@ $baseFontFamily: 'Microsoft Yahei','Hiragino Sans GB','WenQuanYi Micro Hei', 'So
 // Type
 $baseFontSize   : 14;
 $baseLineHeight : 1.5;
-$smallFontSize  : $baseFontSize;
+$smallFontSize  : $baseFontSize * 0.8 *1px;
 
 $baseLine     : $baseFontSize * $baseLineHeight;
 $px: 'px';
@@ -68,3 +68,11 @@ $tfootBackgroundColor: $colorGrayLightest;
 $colorStripedTable: $colorGrayLighter;
 $colorHoveredTable: lightne($colorPrimaryA,50%);
 $cellBorder: 1px;
+$columnarWidth: 150px;
+$columnarMargin: 20px;
+$inputFontFamily: $baseFontFamily;
+$colorBody: $colorGrayDarker;
+
+// Grid
+$gridWidth: 1000;
+$gridGutterWidth: 30;
