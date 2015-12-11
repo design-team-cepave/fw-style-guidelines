@@ -1,3 +1,4 @@
+// Button Color Mixin
 @mixin box-gradient($from, $to, $weight: 0) {
   $mix-main: mix($from, $to);
   $mix-sub-from: mix($mix-main, $from);
@@ -25,6 +26,89 @@
   background-repeat: no-repeat;
   background-clip: border-box;
 }
-
 @mixin gradient-primary { @include background-image(linear-gradient(90deg, $GradientAStart 10%, $GradientAEnd 90%));}
 @mixin gradient-secondary { @include background-image(linear-gradient(90deg, $GradientBStart 10%, $GradientBend 90%));}
+@mixin button-stoke {
+  color: $colorPrimaryA;
+  border-color: $colorPrimaryA;
+  border-width: 2px;
+  border-style: solid;
+  background: transparent;
+}
+@mixin button-fill {
+  @include button-stoke;
+  color: $colorGrayLightest;
+  background-color: $colorPrimaryA;
+}
+
+// Grid Mixin
+@mixin block($num) {
+  width: (($gridWidth - ($gridGutterWidth * $num)) / $num / ($gridWidth / 100)) * 1%;
+}
+
+@mixin column($num) {
+  width: (($gridWidth - ($gridGutterWidth * ($num - 1))) / $num / ($gridWidth / 100)) * 1%;
+}
+
+@mixin columns($factor, $num) {
+  width: ((($gridWidth - ($gridGutterWidth * ($num - 1))) / $num / ($gridWidth / 100)) * $factor) + (($gridGutterWidth / ($gridWidth / 100)) * ($factor - 1)) * 1%;
+}
+
+@mixin column-push($num) {
+  left: ((($gridWidth - ($gridGutterWidth * ($num - 1))) / $num / ($gridWidth / 100)) + $gridGutterWidth/($gridWidth/100)) * 1%;
+}
+
+@mixin columns-push($factor, $num) {
+  left: (((($gridWidth - ($gridGutterWidth * ($num - 1))) / $num / ($gridWidth / 100)) * $factor) + (($gridGutterWidth / ($gridWidth / 100)) * ($factor - 1)) + $gridGutterWidth/($gridWidth/100)) * 1%;
+}
+
+//Form
+@mixin placeholder($color: $input-color-placeholder) {
+  :-moz-placeholder            { color: $color; } // Firefox 4-18
+  ::-moz-placeholder           { color: $color; } // Firefox 19+
+  :-ms-input-placeholder       { color: $color; } // Internet Explorer 10+
+  ::-webkit-input-placeholder  { color: $color; padding: 2px; } // Safari and Chrome
+}
+
+
+@mixin link {
+  font-size: ceil($baseFontSize * 1.1428) * 1px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+@function decimal-round ($number, $digits: 0, $mode: round) {
+  $n: 1;
+  @if type-of($number) != number {
+    @warn '#{ $number } is not a number.';
+    @return $number;
+  }
+  @if type-of($digits) != number {
+    @warn '#{ $digits } is not a number.';
+    @return $number;
+  } @else if not unitless($digits) {
+    @warn '#{ $digits } has a unit.';
+    @return $number;
+  }
+  @for $i from 1 through $digits {
+    $n: $n * 10;
+  }
+  @if $mode == round {
+    @return round($number * $n) / $n;
+  } @else if $mode == ceil {
+    @return ceil($number * $n) / $n;
+  } @else if $mode == floor {
+    @return floor($number * $n) / $n;
+  } @else {
+    @warn '#{ $mode } is undefined keyword.';
+    @return $number;
+  }
+}
+
+@function decimal-ceil ($number, $digits: 0) {
+  @return decimal-round($number, $digits, ceil);
+}
+
+@function decimal-floor ($number, $digits: 0) {
+  @return decimal-round($number, $digits, floor);
+}

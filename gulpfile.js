@@ -7,6 +7,7 @@ var gulp        = require('gulp'),
     browserify  = require('browserify'),
     del         = require('del'),
     argv        = require('yargs').argv;
+    minifyCSS   = require('gulp-minify-css');
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -26,6 +27,7 @@ gulp.task('compass', function() {
       sass: 'src/stylesheets',
       require: ['susy', 'modular-scale']
     }))
+    .pipe(minifyCSS())
     .pipe(gulp.dest('dist/stylesheets'));
 });
 

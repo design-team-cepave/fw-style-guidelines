@@ -47,12 +47,12 @@ $colorSecondaryY    : $colorYellowOrange;
 $colorSecondaryR    : $colorCarnation;
 $colorSecondaryP    : $colorAmethyst;
 
-$colorGrayLightest  : lighten($colorGrey, 70%);
-$colorGrayLighter   : lighten($colorGrey, 60%);
-$colorGrayLight     : lighten($colorGrey, 48%);
-$colorGray          : lighten($colorGrey, 36%);
-$colorGrayDark      : lighten($colorGrey, 24%);
-$colorGrayDarker    : lighten($colorGrey, 12%);
+$colorGrayLightest  : desaturate(lighten($colorGrey, 68%), 5%);
+$colorGrayLighter   : desaturate(lighten($colorGrey, 60%), 5%);
+$colorGrayLight     : desaturate(lighten($colorGrey, 50%), 5%);
+$colorGray          : desaturate(lighten($colorGrey, 38%), 5%);
+$colorGrayDark      : desaturate(lighten($colorGrey, 25%), 5%);
+$colorGrayDarker    : desaturate(lighten($colorGrey, 12%), 3%);
 $colorGrayDarkest   : $colorGrey;
 
 $baseFontFamily: 'Microsoft Yahei','Hiragino Sans GB','WenQuanYi Micro Hei', 'Source Sans Pro', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
@@ -63,6 +63,7 @@ $smallFontSize  : $baseFontSize * 0.8 *1px;
 
 $baseLine     : $baseFontSize * $baseLineHeight;
 $px: 'px';
+$fieldsBottom: 1.65em;
 
 $tfootBackgroundColor: $colorGrayLightest;
 $colorStripedTable: $colorGrayLighter;
@@ -74,5 +75,5 @@ $inputFontFamily: $baseFontFamily;
 $colorBody: $colorGrayDarker;
 
 // Grid
-$gridWidth: 1000;
+$gridWidth: 1070;
 $gridGutterWidth: 30;

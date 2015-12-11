@@ -11,18 +11,22 @@ mixin table-content
       td
       td
 
-.material.table
+.material#table
   h2 Table
   .row
     .table-item
       table.table-bordered
         +table-content
+      code .table-bordered
     .table-item
       table.table-stroked
         +table-content
+      code .table-stroked
     .table-item
       table.table-striped
         +table-content
+      code .table-striped
     .table-item
       table.table-hovered
         +table-content
+      code .table-hovered
