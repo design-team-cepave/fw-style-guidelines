@@ -5,6 +5,9 @@ var gulp        = require('gulp'),
     through2    = require('through2'),
     reload      = browserSync.reload,
     browserify  = require('browserify'),
+    plumber     = require('gulp-plumber'),
+    compass     = require('gulp-compass'),
+    watch       = require('gulp-watch'),
     del         = require('del'),
     argv        = require('yargs').argv;
     minifyCSS   = require('gulp-minify-css');
@@ -25,9 +28,9 @@ gulp.task('compass', function() {
     .pipe($.compass({
       css: 'dist/stylesheets',
       sass: 'src/stylesheets',
-      require: ['susy', 'modular-scale']
+      style: 'compact',
+      require: ['susy']
     }))
-    .pipe(minifyCSS())
     .pipe(gulp.dest('dist/stylesheets'));
 });
 
