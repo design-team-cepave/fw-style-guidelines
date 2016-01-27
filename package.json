@@ -1,5 +1,5 @@
 {
-  "name": "nd-styleguidelines",
+  "name": "Fastweb-styleguidelines",
   "version": "0.0.1",
   "devDependencies": {
     "babelify": "^6.0.2",

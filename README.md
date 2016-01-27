@@ -1,4 +1,4 @@
-# NewDefend Style Guidelines
+# Fastweb Style Guidelines
 
 ## Getting Started
 
